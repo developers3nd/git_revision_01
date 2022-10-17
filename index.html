@@ -1,0 +1,129 @@
+<!-- <form>
+    <input type="text" id="name"  placeholder="Name"> <br><br>
+    <input type="text" id="pass"  placeholder="Password"> <br><br>
+    <input type="button" value="submit" onclick="test(name )" id="Register">
+</form>
+
+<p id="result"></p>
+
+<script>
+
+function view(num){
+             document.getElementById("result").innerHTML+=num;
+        
+
+         }
+
+         function test(name,pass){
+             document.getElementById("result").innerHTML= name + pass;
+             
+        
+
+         }
+
+         function calc(){
+             let x =  document.getElementById("name").value;
+       
+             let y =  eval(x);
+            //  let d =  eval(z);
+            //  let z =  document.getElementById("pass").value;
+            // document.getElementById("pass").value = d;
+             document.getElementById("name").value = y;
+        
+            
+
+         }
+
+         function clear(){
+             
+             document.getElementById("name").value=" ";
+             document.getElementById("pass").value=" ";
+             
+         }
+</script> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  
+        <style>
+            #data{
+                height: auto;
+                background-color: navy;
+                color:white;
+                width: 200px;
+            }
+        </style>
+
+        a: <input type="number" name="a" id="a"><br>
+        b: <input type="number" name="b" id="b"><br>
+        <button onclick="add(document.getElementById('a').value,document.getElementById('b').value)">Add</button>
+
+        <h1>form 1 </h1>
+
+       
+
+        c: <input type="text" name="c" id="c"><br>
+        d: <input type="text" name="d" id="d"><br>
+        <button onclick="test()">Test</button>
+
+
+        <hr>
+        <h3>form 2</h3>
+
+        c: <input type="text" name="c" id="c"><br>
+        d: <input type="text" name="d" id="d"><br>
+        <button onclick="test()">Test</button>
+
+
+
+        <p id="data"></p>
+
+        <script>
+          function add(a,b) {
+            var sum = parseInt(a) + parseInt(b);
+            alert(sum);
+        }
+
+        function rest(){
+            document.getElementById("c").value = ' ';
+            document.getElementById("d").value = ' ';
+        }
+
+      
+            var c = document.getElementById("c");
+            var d = document.getElementById("d");
+            var data = document.getElementById("data");
+
+        function test() {
+            var values = document.createElement('p');
+
+            var x = c.value;
+            var y = d.value;
+
+            var z = x+y;
+
+            values.innerHTML = z;
+            data.appendChild(values);
+
+           
+
+        }
+
+        
+
+       
+
+
+    </script>
+    
+</body>
+</body>
+</html>

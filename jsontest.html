@@ -1,0 +1,109 @@
+
+<style>
+  .contact{
+    width: 100%;
+    height: auto;
+    float: left;
+  }
+  .contact > form{
+    width: 32%;
+    height: 200px;
+    border: 1px solid gray;
+    float: left;
+    margin-left: 10px;
+  }
+</style>
+
+<section class="contact">
+    <h1> Add Data using JSON stringify</h1> <hr>
+
+    <form>
+
+      <h1>Form 1 </h1> <hr>
+ 
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <br><br>
+      
+      <label for="pass">Password</label>
+      <input  type="password" id="email" name="pass"/>
+
+      <br><br>
+      
+      <button type="submit">Send Record</button>
+    </form>
+
+    
+    <form>
+      <h1>Form 2 </h1> <hr>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <br><br>
+      
+      <label for="pass">Password</label>
+      <input  type="password" id="email" name="pass"/>
+
+      <br><br>
+      
+      <button type="submit">Send Record</button>
+    </form>
+
+
+    <form>
+      <h1>Form 3 </h1> <hr>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" />
+
+      <br><br>
+      
+      <label for="pass">Password</label>
+      <input  type="password" id="email" name="pass"/>
+
+      <br><br>
+      
+      <button type="submit">Send Record</button>
+    </form>
+
+
+  </section>
+  
+    <h2>Combine display with both forms</h2>
+    <table border="1">
+         <tr>
+            <th>Name</th>
+            <th>Pass</th>
+         </tr>
+         <tr>
+           <td id="td_name"></td>
+           <td id="td_pass"></td>
+         </tr>
+    </table>
+  
+  <script>
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        const data = new FormData(event.target);
+        
+        const formJSON = Object.fromEntries(data.entries());
+
+        const td_name = document.getElementById('td_name');
+        const td_pass = document.getElementById('td_pass');
+
+        //const result =  document.querySelector('.results pre');    another method
+
+        mydata = JSON.stringify(formJSON, null, 2);
+        var object = JSON.parse(mydata);
+        td_name.innerText = object.name;
+        td_pass.innerText = object.pass;
+
+      }
+
+        const form = document.querySelector('.contact');
+        form.addEventListener('submit', handleFormSubmit);
+    </script>
